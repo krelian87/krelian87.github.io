@@ -97,7 +97,7 @@
 </ul><h3>
 <a name="3d-representation" class="anchor" href="#3d-representation"><span class="octicon octicon-link"></span></a>3D Representation</h3>
 
-<p>I choose to divide the model in some main parts: the front face, two sides and the top. These parts will form the main structure of the train.
+<p>I chose to divide the model in some main parts: the front face, two sides and the top. These parts will form the main structure of the train.
 Let's begin with the top of the train: this is the code in PyPlasm and a screen of the result.</p>
 
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">generateTop450</span><span class="p">():</span>
@@ -135,7 +135,7 @@ Let's begin with the top of the train: this is the code in PyPlasm and a screen 
 
 <p><img src="https://github.com/krelian87/krelian87.github.io/raw/master/screenshot/LRS450.png" alt="The structure of the sides of ETR 450"></p>
 
-<p>In the end, here it is the code for the front part of ETR 450: instead of using COONSPATCH function, I choose to use only BEZIER, for a better result.</p>
+<p>In the end, the code for the front part of ETR 450: instead of using COONSPATCH function, I chose to use only BEZIER for modeling the surface.</p>
 
 <div class="highlight"><pre><span class="k">def</span> <span class="nf">genFrontSide450</span><span class="p">():</span>
     <span class="n">adjust</span> <span class="o">=</span> <span class="mf">0.85</span>
@@ -179,6 +179,8 @@ Let's begin with the top of the train: this is the code in PyPlasm and a screen 
 
 <p><img src="https://raw.github.com/krelian87/krelian87.github.io/master/screenshot/window450.png" alt="An example of lateral window of ETR 450"></p>
 
+<p>In <em>plasm.js</em>  I defined every particular of the model (colors, windows, doors, wheels, the windshield); so, this is the final result: here you can find some screenshots, or you can see it in action in the <em>plasm.js</em> environment.</p>
+
 <h2>
 <a name="the-etr-480" class="anchor" href="#the-etr-480"><span class="octicon octicon-link"></span></a>The ETR 480</h2>
 
@@ -197,6 +199,18 @@ Let's begin with the top of the train: this is the code in PyPlasm and a screen 
 <li>Total number of seats: 480 (341 II + 139 I)</li>
 </ul><h3>
 <a name="3d-representation-1" class="anchor" href="#3d-representation-1"><span class="octicon octicon-link"></span></a>3D Representation</h3>
+
+<p>Like the ETR 450 model, I divided the structure in some parts (top, sides, front); for example, this is the Python code for the front part of ETR 480 model.</p>
+
+<div class="highlight"><pre><span class="k">def</span> <span class="nf">generateWindow450</span><span class="p">():</span>
+    <span class="n">c1</span><span class="o">=</span><span class="n">BEZIER</span><span class="p">(</span><span class="n">S1</span><span class="p">)([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mf">1.5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mf">1.5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mf">1.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mf">1.5</span><span class="p">,</span><span class="n">trainHeight</span><span class="o">/</span><span class="mi">3</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mf">1.5</span><span class="p">,</span><span class="n">trainHeight</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mf">1.5</span><span class="p">,</span><span class="n">trainHeight</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="n">trainHeight</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="n">c2</span><span class="o">=</span><span class="n">BEZIER</span><span class="p">(</span><span class="n">S1</span><span class="p">)([[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span><span class="n">trainHeight</span><span class="o">/</span><span class="mi">3</span><span class="o">-</span><span class="mf">0.5</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span><span class="n">trainHeight</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="o">-</span><span class="mf">1.5</span><span class="p">,</span><span class="n">trainHeight</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="n">trainHeight</span><span class="o">/</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+    <span class="n">temp</span><span class="o">=</span><span class="n">MAP</span><span class="p">(</span><span class="n">BEZIER</span><span class="p">(</span><span class="n">S2</span><span class="p">)([</span><span class="n">c1</span><span class="p">,</span><span class="n">c2</span><span class="p">]))(</span><span class="n">dom2D</span><span class="p">)</span>
+    <span class="n">out</span><span class="o">=</span><span class="n">COLOR</span><span class="p">([</span><span class="mf">1.71</span><span class="p">,</span><span class="mf">2.05</span><span class="p">,</span><span class="mf">2.55</span><span class="p">])(</span><span class="n">STRUCT</span><span class="p">([</span><span class="n">T</span><span class="p">([</span><span class="mi">2</span><span class="p">])([</span><span class="mf">0.29</span><span class="p">]),</span><span class="n">R</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])(</span><span class="o">-</span><span class="n">PI</span><span class="o">/</span><span class="mi">16</span><span class="p">),</span><span class="n">T</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])([</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mf">0.3</span><span class="p">,</span><span class="o">-</span><span class="n">trainHeight</span><span class="o">/</span><span class="mi">2</span><span class="o">-</span><span class="mf">0.65</span><span class="p">]),</span><span class="n">R</span><span class="p">([</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])(</span><span class="n">PI</span><span class="o">/</span><span class="mi">2</span><span class="p">),</span><span class="n">temp</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">out</span>
+</pre></div>
+
+<p><img src="https://raw.github.com/krelian87/krelian87.github.io/master/screenshot/front480.png" alt="The structure of the front of ETR 480"></p>
 
 <h2>
 <a name="credits" class="anchor" href="#credits"><span class="octicon octicon-link"></span></a>Credits</h2>
